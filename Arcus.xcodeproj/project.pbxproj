@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		521FD1752149B8C5008D1A87 /* Arcus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521FD16B2149B8C4008D1A87 /* Arcus.framework */; };
+		521FD17A2149B8C5008D1A87 /* ArcusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1792149B8C5008D1A87 /* ArcusTests.swift */; };
+		521FD17C2149B8C5008D1A87 /* Arcus.h in Headers */ = {isa = PBXBuildFile; fileRef = 521FD16E2149B8C4008D1A87 /* Arcus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		521FD1932149B967008D1A87 /* AssociatedObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1852149B967008D1A87 /* AssociatedObjectStore.swift */; };
+		521FD1942149B967008D1A87 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1872149B967008D1A87 /* Coordinator.swift */; };
+		521FD1952149B967008D1A87 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1882149B967008D1A87 /* Events.swift */; };
+		521FD1962149B967008D1A87 /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1892149B967008D1A87 /* Observable+.swift */; };
+		521FD1972149B967008D1A87 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18B2149B967008D1A87 /* Reducer.swift */; };
+		521FD1982149B967008D1A87 /* ViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18C2149B967008D1A87 /* ViewOutput.swift */; };
+		521FD1992149B967008D1A87 /* ProcessingEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */; };
+		521FD19A2149B967008D1A87 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18E2149B967008D1A87 /* Presenter.swift */; };
+		521FD19B2149B967008D1A87 /* ViewModeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18F2149B967008D1A87 /* ViewModeler.swift */; };
+		521FD19C2149B967008D1A87 /* Reducer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1902149B967008D1A87 /* Reducer+.swift */; };
+		521FD19D2149B967008D1A87 /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1912149B967008D1A87 /* Stepper.swift */; };
+		521FD19E2149B967008D1A87 /* HasDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1922149B967008D1A87 /* HasDisposeBag.swift */; };
+		521FD1A32149B978008D1A87 /* ArcusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD19F2149B977008D1A87 /* ArcusTests.swift */; };
+		521FD1A42149B978008D1A87 /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A02149B978008D1A87 /* ReducerTests.swift */; };
+		521FD1A52149B978008D1A87 /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A12149B978008D1A87 /* InteractorTests.swift */; };
+		521FD1A62149B978008D1A87 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A22149B978008D1A87 /* CoordinatorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		521FD1762149B8C5008D1A87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 521FD1622149B8C4008D1A87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 521FD16A2149B8C4008D1A87;
+			remoteInfo = Arcus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		521FD16B2149B8C4008D1A87 /* Arcus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arcus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		521FD16E2149B8C4008D1A87 /* Arcus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arcus.h; sourceTree = "<group>"; };
+		521FD16F2149B8C4008D1A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521FD1742149B8C4008D1A87 /* ArcusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		521FD1792149B8C5008D1A87 /* ArcusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcusTests.swift; sourceTree = "<group>"; };
+		521FD17B2149B8C5008D1A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521FD1852149B967008D1A87 /* AssociatedObjectStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObjectStore.swift; sourceTree = "<group>"; };
+		521FD1872149B967008D1A87 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		521FD1882149B967008D1A87 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		521FD1892149B967008D1A87 /* Observable+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
+		521FD18B2149B967008D1A87 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		521FD18C2149B967008D1A87 /* ViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOutput.swift; sourceTree = "<group>"; };
+		521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingEventEmitter.swift; sourceTree = "<group>"; };
+		521FD18E2149B967008D1A87 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		521FD18F2149B967008D1A87 /* ViewModeler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModeler.swift; sourceTree = "<group>"; };
+		521FD1902149B967008D1A87 /* Reducer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reducer+.swift"; sourceTree = "<group>"; };
+		521FD1912149B967008D1A87 /* Stepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
+		521FD1922149B967008D1A87 /* HasDisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasDisposeBag.swift; sourceTree = "<group>"; };
+		521FD19F2149B977008D1A87 /* ArcusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcusTests.swift; sourceTree = "<group>"; };
+		521FD1A02149B978008D1A87 /* ReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerTests.swift; sourceTree = "<group>"; };
+		521FD1A12149B978008D1A87 /* InteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
+		521FD1A22149B978008D1A87 /* CoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		521FD1672149B8C4008D1A87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FD1712149B8C4008D1A87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521FD1752149B8C5008D1A87 /* Arcus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		521FD1612149B8C4008D1A87 = {
+			isa = PBXGroup;
+			children = (
+				521FD16D2149B8C4008D1A87 /* Arcus */,
+				521FD1782149B8C5008D1A87 /* ArcusTests */,
+				521FD16C2149B8C4008D1A87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		521FD16C2149B8C4008D1A87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				521FD16B2149B8C4008D1A87 /* Arcus.framework */,
+				521FD1742149B8C4008D1A87 /* ArcusTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		521FD16D2149B8C4008D1A87 /* Arcus */ = {
+			isa = PBXGroup;
+			children = (
+				521FD16E2149B8C4008D1A87 /* Arcus.h */,
+				521FD16F2149B8C4008D1A87 /* Info.plist */,
+				521FD1852149B967008D1A87 /* AssociatedObjectStore.swift */,
+				521FD1862149B967008D1A87 /* Coordinator */,
+				521FD1882149B967008D1A87 /* Events.swift */,
+				521FD1922149B967008D1A87 /* HasDisposeBag.swift */,
+				521FD1892149B967008D1A87 /* Observable+.swift */,
+				521FD18A2149B967008D1A87 /* Scene */,
+			);
+			path = Arcus;
+			sourceTree = "<group>";
+		};
+		521FD1782149B8C5008D1A87 /* ArcusTests */ = {
+			isa = PBXGroup;
+			children = (
+				521FD1792149B8C5008D1A87 /* ArcusTests.swift */,
+				521FD19F2149B977008D1A87 /* ArcusTests.swift */,
+				521FD1A22149B978008D1A87 /* CoordinatorTests.swift */,
+				521FD1A12149B978008D1A87 /* InteractorTests.swift */,
+				521FD1A02149B978008D1A87 /* ReducerTests.swift */,
+				521FD17B2149B8C5008D1A87 /* Info.plist */,
+			);
+			path = ArcusTests;
+			sourceTree = "<group>";
+		};
+		521FD1862149B967008D1A87 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				521FD1872149B967008D1A87 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		521FD18A2149B967008D1A87 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				521FD18B2149B967008D1A87 /* Reducer.swift */,
+				521FD18C2149B967008D1A87 /* ViewOutput.swift */,
+				521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */,
+				521FD18E2149B967008D1A87 /* Presenter.swift */,
+				521FD18F2149B967008D1A87 /* ViewModeler.swift */,
+				521FD1902149B967008D1A87 /* Reducer+.swift */,
+				521FD1912149B967008D1A87 /* Stepper.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		521FD1682149B8C4008D1A87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521FD17C2149B8C5008D1A87 /* Arcus.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		521FD16A2149B8C4008D1A87 /* Arcus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521FD17F2149B8C5008D1A87 /* Build configuration list for PBXNativeTarget "Arcus" */;
+			buildPhases = (
+				521FD1662149B8C4008D1A87 /* Sources */,
+				521FD1672149B8C4008D1A87 /* Frameworks */,
+				521FD1682149B8C4008D1A87 /* Headers */,
+				521FD1692149B8C4008D1A87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arcus;
+			productName = Arcus;
+			productReference = 521FD16B2149B8C4008D1A87 /* Arcus.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		521FD1732149B8C4008D1A87 /* ArcusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521FD1822149B8C5008D1A87 /* Build configuration list for PBXNativeTarget "ArcusTests" */;
+			buildPhases = (
+				521FD1702149B8C4008D1A87 /* Sources */,
+				521FD1712149B8C4008D1A87 /* Frameworks */,
+				521FD1722149B8C4008D1A87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				521FD1772149B8C5008D1A87 /* PBXTargetDependency */,
+			);
+			name = ArcusTests;
+			productName = ArcusTests;
+			productReference = 521FD1742149B8C4008D1A87 /* ArcusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		521FD1622149B8C4008D1A87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = hadrienmazelier;
+				TargetAttributes = {
+					521FD16A2149B8C4008D1A87 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					521FD1732149B8C4008D1A87 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 521FD1652149B8C4008D1A87 /* Build configuration list for PBXProject "Arcus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 521FD1612149B8C4008D1A87;
+			productRefGroup = 521FD16C2149B8C4008D1A87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				521FD16A2149B8C4008D1A87 /* Arcus */,
+				521FD1732149B8C4008D1A87 /* ArcusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		521FD1692149B8C4008D1A87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FD1722149B8C4008D1A87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		521FD1662149B8C4008D1A87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521FD19B2149B967008D1A87 /* ViewModeler.swift in Sources */,
+				521FD1962149B967008D1A87 /* Observable+.swift in Sources */,
+				521FD1952149B967008D1A87 /* Events.swift in Sources */,
+				521FD19E2149B967008D1A87 /* HasDisposeBag.swift in Sources */,
+				521FD19A2149B967008D1A87 /* Presenter.swift in Sources */,
+				521FD1992149B967008D1A87 /* ProcessingEventEmitter.swift in Sources */,
+				521FD1942149B967008D1A87 /* Coordinator.swift in Sources */,
+				521FD19C2149B967008D1A87 /* Reducer+.swift in Sources */,
+				521FD1982149B967008D1A87 /* ViewOutput.swift in Sources */,
+				521FD19D2149B967008D1A87 /* Stepper.swift in Sources */,
+				521FD1972149B967008D1A87 /* Reducer.swift in Sources */,
+				521FD1932149B967008D1A87 /* AssociatedObjectStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FD1702149B8C4008D1A87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521FD1A42149B978008D1A87 /* ReducerTests.swift in Sources */,
+				521FD1A62149B978008D1A87 /* CoordinatorTests.swift in Sources */,
+				521FD1A32149B978008D1A87 /* ArcusTests.swift in Sources */,
+				521FD1A52149B978008D1A87 /* InteractorTests.swift in Sources */,
+				521FD17A2149B8C5008D1A87 /* ArcusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		521FD1772149B8C5008D1A87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 521FD16A2149B8C4008D1A87 /* Arcus */;
+			targetProxy = 521FD1762149B8C5008D1A87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		521FD17D2149B8C5008D1A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		521FD17E2149B8C5008D1A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		521FD1802149B8C5008D1A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UGLU7NB6HQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Arcus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadrienmazelier.Arcus;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		521FD1812149B8C5008D1A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UGLU7NB6HQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Arcus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadrienmazelier.Arcus;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		521FD1832149B8C5008D1A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGLU7NB6HQ;
+				INFOPLIST_FILE = ArcusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadrienmazelier.ArcusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		521FD1842149B8C5008D1A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGLU7NB6HQ;
+				INFOPLIST_FILE = ArcusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadrienmazelier.ArcusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		521FD1652149B8C4008D1A87 /* Build configuration list for PBXProject "Arcus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521FD17D2149B8C5008D1A87 /* Debug */,
+				521FD17E2149B8C5008D1A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521FD17F2149B8C5008D1A87 /* Build configuration list for PBXNativeTarget "Arcus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521FD1802149B8C5008D1A87 /* Debug */,
+				521FD1812149B8C5008D1A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521FD1822149B8C5008D1A87 /* Build configuration list for PBXNativeTarget "ArcusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521FD1832149B8C5008D1A87 /* Debug */,
+				521FD1842149B8C5008D1A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 521FD1622149B8C4008D1A87 /* Project object */;
+}
