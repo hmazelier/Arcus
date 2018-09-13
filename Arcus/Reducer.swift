@@ -1,6 +1,6 @@
 //
 //  Reducer.swift
-//  hFlow
+//  Arcus
 //
 //  Created by Hadrien Mazelier on 06/09/2018.
 //  Copyright © 2018 HadrienMazelier. All rights reserved.
@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import hCore
 
 public protocol Reducer: HasDisposeBag {
     
@@ -22,7 +21,6 @@ public protocol Reducer: HasDisposeBag {
     var state: BehaviorSubject<StateType> { get }
     
     var actions: PublishRelay<Action> { get }
-    func initiateActions() -> PublishRelay<Action> // No need to implement this except if you don't want to use the provided mechanism
     
     func provideInitialActionsStream() -> Observable<Action>
     func provideInitialEventsStream() -> Observable<Event>

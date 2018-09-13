@@ -9,8 +9,20 @@
 import Foundation
 import RxSwift
 
-public extension Observable where Element: Event {
-    public func surround<T: ProcessingEvent>(before: T, after: T) -> Observable<Event> where T: Equatable  {
-        return self.map { $0 }
+public extension Observable {
+    public func concatJust(_ element: Element) -> Observable<Element> {
+        return self.concat(Observable.just(element))
+    }
+}
+
+public extension Observable {
+    public func tryMap<T>(to type: T.Type) -> Observable<T> {
+        return flatMap({ e -> Observable<T> in
+            if let e = e as? T {
+                return .just(e)
+            } else {
+                return .empty()
+            }
+        })
     }
 }

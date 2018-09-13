@@ -1,6 +1,6 @@
 //
 //  Reducer+.swift
-//  hFlow
+//  Arcus
 //
 //  Created by Hadrien Mazelier on 06/09/2018.
 //  Copyright © 2018 HadrienMazelier. All rights reserved.
@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import hCore
 
 private var stateKey = "state"
 private var actionsKey = "action"
@@ -17,7 +16,7 @@ private var actionsKey = "action"
 extension Reducer {
     
     public var actions: PublishRelay<Action> {
-        return self.associatedObject(forKey: &actionsKey, default: self.initiateActions())
+        return self.associatedObject(forKey: &actionsKey, default: provideInitialActionsRelay())
     }
     
     public var state: BehaviorSubject<StateType> {
@@ -44,17 +43,22 @@ extension Reducer {
         return state
     }
     
-    
+    public func start() {
+        _ = self.actions
+    }
 }
 extension Reducer {
     func extractStepsFromEvents(_ events: Observable<Event>) { }
     func extractProcessingEventsFromEvents(_ events: Observable<Event>) { }
     
-    func getTransformedEvents(from actionsRelay: PublishRelay<Action>) -> ConnectableObservable<Event> {
+    func getTransformedEvents(from actions: Observable<Action>) -> ConnectableObservable<Event> {
+        
         let initialActionsStream = self.provideInitialActionsStream()
         
-        let mergedActions = initialActionsStream.concat(actionsRelay.asObservable())
-        let transformedConnectableActions = self.transform(actions: mergedActions).publish()
+        let mergedActions = initialActionsStream.concat(actions).share(replay: 1)
+        
+        
+        let transformedConnectableActions = self.transform(actions: mergedActions)
         
         let sanitizedActions = transformedConnectableActions.scan(Events.none) { (previous, last) -> Action in
             if last is Events.RetryRequest {
@@ -64,15 +68,17 @@ extension Reducer {
             }
         }
         
-        let localActions = sanitizedActions.tryMap(to: ActionType.self)
         
+        let localActions = sanitizedActions.tryMap(to: ActionType.self)
+
         let events = localActions.flatMap { [weak self] action -> Observable<Event> in
             guard let this = self else { return .empty() }
             return this.produceEvent(from: action)
                 .catchError { _ in return .empty() }
         }
+
         let initialEventsStream = self.provideInitialEventsStream()
-        let mergedEvents = initialEventsStream.concat(events)
+        let mergedEvents = initialEventsStream.concat(events).share(replay: 1)
         
         let transformedConnectableEvents = self.transform(events: mergedEvents).publish()
         return transformedConnectableEvents
@@ -93,10 +99,10 @@ extension Reducer {
         return connectableTranformedMutatedState
     }
     
-    func initiateActions() -> PublishRelay<Action> {
+    func provideInitialActionsRelay() -> PublishRelay<Action> {
         let actionsRelay = PublishRelay<Action>()
-        
-        let transformedConnectableEvents = self.getTransformedEvents(from: actionsRelay)
+        let connectableActions = actionsRelay.asObservable().publish()
+        let transformedConnectableEvents = self.getTransformedEvents(from: connectableActions)
         
         self.extractStepsFromEvents(transformedConnectableEvents)
         self.extractProcessingEventsFromEvents(transformedConnectableEvents)
@@ -106,6 +112,10 @@ extension Reducer {
         connectableTranformedMutatedState
             .bind(to: self.state)
             .disposed(by: self.disposeBag)
+        
+        connectableTranformedMutatedState.connect().disposed(by: disposeBag)
+        transformedConnectableEvents.connect().disposed(by: disposeBag)
+        connectableActions.connect().disposed(by: disposeBag)
         
         return actionsRelay
     }
@@ -123,7 +133,7 @@ extension Reducer where Self: StepProducer {
 extension Reducer where Self: ProcessingEventEmitter {
     func extractProcessingEventsFromEvents(_ events: Observable<Event>) {
         events
-            .tryMap(to: ProcessingEventType.self)
+            .tryMap(to: ProcessingEvent.self)
             .bind(to: self.processingEvents)
             .disposed(by: disposeBag)
     }
@@ -131,10 +141,16 @@ extension Reducer where Self: ProcessingEventEmitter {
 
 extension Reducer where Self: ViewModeler {
     
-    func initiateActions() -> PublishRelay<Action> {
+    public var actions: PublishRelay<Action> {
+        return self.associatedObject(forKey: &actionsKey, default: provideInitialActionsRelay())
+    }
+    
+    func provideInitialActionsRelay() -> PublishRelay<Action> {
         let actionsRelay = PublishRelay<Action>()
         
-        let transformedConnectableEvents = self.getTransformedEvents(from: actionsRelay)
+        let connectableActions = actionsRelay.asObservable().publish()
+        
+        let transformedConnectableEvents = self.getTransformedEvents(from: connectableActions)
         
         self.extractStepsFromEvents(transformedConnectableEvents)
         self.extractProcessingEventsFromEvents(transformedConnectableEvents)
@@ -146,6 +162,10 @@ extension Reducer where Self: ViewModeler {
         connectableTranformedMutatedState
             .bind(to: self.state)
             .disposed(by: self.disposeBag)
+        
+        transformedConnectableEvents.connect().disposed(by: disposeBag)
+        connectableTranformedMutatedState.connect().disposed(by: disposeBag)
+        connectableActions.connect().disposed(by: disposeBag)
         
         return actionsRelay
     }

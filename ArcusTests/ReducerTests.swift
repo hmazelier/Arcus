@@ -1,6 +1,6 @@
 //
 //  RegularReducerTests.swift
-//  hFlowTests
+//  ArcusTests
 //
 //  Created by Hadrien Mazelier on 06/09/2018.
 //  Copyright © 2018 HadrienMazelier. All rights reserved.
@@ -10,15 +10,18 @@ import XCTest
 import Foundation
 import RxSwift
 import RxCocoa
-import hCore
-@testable import hFlow
+@testable import Arcus
 
 ///// TESTS
 private struct SomeState: State {
-    var receivedInitialAction = false
+    var initialCount = 0
+    var transformed = false
+    var transformedActionCount = 0
+    var transformedMutation = 0
 }
 private enum SomeAction: Action {
     case initial
+    case transformed
 }
 
 private enum SomeProcessingEvent: ProcessingEvent {
@@ -26,12 +29,16 @@ private enum SomeProcessingEvent: ProcessingEvent {
 }
 private enum SomeMutation: Mutation {
     case initial
+    case transformedAction
+    case transformed
 }
 
 private class SUT: Reducer {
     var forcedState = SomeState()
     var initialActionsStream: Observable<Action> = .empty()
-    var initialEventsStream: Observable<hFlow.Event> = .empty()
+    var initialEventsStream: Observable<Arcus.Event> = .empty()
+    var transformedState: StateType?
+    var forcedAction: ActionType?
     
     func provideInitialState() -> SomeState {
         return forcedState
@@ -41,21 +48,44 @@ private class SUT: Reducer {
         return self.initialActionsStream
     }
     
-    func provideInitialEventsStream() -> Observable<hFlow.Event> {
+    func provideInitialEventsStream() -> Observable<Arcus.Event> {
         return self.initialEventsStream
     }
     
-    func produceEvent(from action: SomeAction) -> Observable<hFlow.Event> {
-        return .empty()
+    func produceEvent(from action: SomeAction) -> Observable<Arcus.Event> {
+        switch action {
+        case .initial: return Observable.just(SomeMutation.initial)
+        case .transformed: return Observable.just(SomeMutation.transformedAction)
+        }
     }
     
     func reduce(state: SomeState, mutation: SomeMutation) -> SomeState {
         var state = state
         switch mutation {
         case .initial:
-            state.receivedInitialAction = true
+            state.initialCount += 1
+        case .transformedAction:
+            state.transformedActionCount += 1
+        case .transformed:
+            state.transformedMutation += 1
         }
         return state
+    }
+    
+    func transform(state: Observable<SomeState>) -> Observable<SomeState> {
+        if let transformedState = self.transformedState {
+            return state.map { _ in return transformedState }
+        } else {
+            return state
+        }
+    }
+    
+    func transform(actions: Observable<Action>) -> Observable<Action> {
+        if let transformedAction = self.forcedAction {
+            return actions.map { _ in return transformedAction }
+        } else {
+            return actions
+        }
     }
     
 }
@@ -69,12 +99,13 @@ class ReducerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        disposeBag = DisposeBag()
+        sut = SUT()
     }
     
     override func tearDown() {
         super.tearDown()
-        disposeBag = DisposeBag()
-        sut = SUT()
+
     }
     
 
@@ -82,129 +113,99 @@ class ReducerTests: XCTestCase {
         sut.initialActionsStream = Observable.just(SomeAction.initial)
         let exp = self.expectation(description: "Test initial action is emitted")
 
-        sut.state.subscribe(onNext: { (state) in
-            if state.receivedInitialAction {
+        sut.state.skip(1).subscribe(onNext: { (state) in
+            if state.initialCount == 1 {
                 exp.fulfill()
             }
         }).disposed(by: disposeBag)
-
-        _ = sut.actions
-
-        wait(for: [exp], timeout: 3)
+        
+        sut.start()
+        
+        wait(for: [exp], timeout: 1.5)
     }
-//
-//    func testInitialMutationIsEmitted() {
-//        sut.initialMutation = TestMutation.initialMutation
-//        let exp = self.expectation(description: "Test initial mutation is emitted")
-//
-//        sut.state.subscribe(onNext: { (state) in
-//            if state.didReceiveInitialMutation {
-//                exp.fulfill()
-//            }
-//        }).disposed(by: disposeBag)
-//
-//        sut.bind(actions: actions.asObservable())
-//
-//        wait(for: [exp], timeout: 3)
-//    }
-//
-//    func testActionMutatesWithoutProcessingEvent() {
-//        let stateExp = self.expectation(description: "Test action mutates without processing event - STATE")
-//        let viewModelExp = self.expectation(description: "Test action mutates without processing event - VM")
-//
-//        sut.state.subscribe(onNext: { (state) in
-//            if state.query == "TEST" {
-//                stateExp.fulfill()
-//            }
-//        }).disposed(by: disposeBag)
-//
-//        sut.viewModel.query.asObservable().subscribe(onNext: { (query) in
-//            if query == "TEST" {
-//                viewModelExp.fulfill()
-//            }
-//        }).disposed(by: disposeBag)
-//
-//        sut.bind(actions: actions.asObservable())
-//
-//        actions.accept(TestAction.changedQuery("TEST"))
-//        wait(for: [stateExp, viewModelExp], timeout: 3)
-//    }
-//
-//    func testActionMutatesWithProcessingEvent() {
-//        let stateExp = self.expectation(description: "Test action mutates with processing event - STATE")
-//        let procExp = self.expectation(description: "Test action mutates with processing event - PROCESSING EVENT")
-//
-//        sut.state.subscribe(onNext: { (state) in
-//            if state.query == "TEST" {
-//                stateExp.fulfill()
-//            }
-//        }).disposed(by: disposeBag)
-//
-//        sut.processingEvents.subscribe(onNext: { (event) in
-//            guard case TestProcessingEvent.loading = event else { return }
-//            procExp.fulfill()
-//        }).disposed(by: disposeBag)
-//
-//        sut.bind(actions: actions.asObservable())
-//
-//        actions.accept(TestAction.changedQueryWithProcessing("TEST"))
-//        wait(for: [stateExp, procExp], timeout: 3)
-//    }
-//
-//    func testActionProducesStep() {
-//        let exp = self.expectation(description: "Test action produces step")
-//
-//        sut.steps.subscribe(onNext: { (step) in
-//            guard case TestStep.stepFromAction = step else { return }
-//            exp.fulfill()
-//        }).disposed(by: disposeBag)
-//
-//        sut.bind(actions: actions.asObservable())
-//
-//        actions.accept(TestAction.produceStepAction)
-//        wait(for: [exp], timeout: 3)
-//    }
-//
-//    func testMutationProducesStep() {
-//        let exp = self.expectation(description: "Test mutation produces step")
-//
-//        sut.steps.subscribe(onNext: { (step) in
-//            guard case TestStep.stepFromMutation = step else { return }
-//            exp.fulfill()
-//        }).disposed(by: disposeBag)
-//
-//        sut.bind(actions: actions.asObservable())
-//
-//        actions.accept(TestAction.produceStepMutation)
-//        wait(for: [exp], timeout: 3)
-//    }
-//
-//    func testTransformState() {
-//        let exp = self.expectation(description: "Test transform state")
-//        let forcedState = TestState(didReceiveInitialAction: true,
-//                                    didReceiveInitialMutation: true,
-//                                    isLoading: true,
-//                                    query: "TEST")
-//        sut.forcedState = forcedState
-//        //skip one because initial state will be the default
-//        var count = 0
-//        sut.state.skip(1).subscribe(onNext: { (state) in
-//            XCTAssertEqual(forcedState.didReceiveInitialAction, state.didReceiveInitialAction)
-//            XCTAssertEqual(forcedState.didReceiveInitialMutation, state.didReceiveInitialMutation)
-//            XCTAssertEqual(forcedState.isLoading, state.isLoading)
-//            XCTAssertEqual(forcedState.query, state.query)
-//            if count == 1 {
-//                exp.fulfill()
-//            }
-//            count += 1
-//
-//        }).disposed(by: disposeBag)
-//        sut.bind(actions: actions.asObservable())
-//        actions.accept(TestAction.changedQuery("TAK"))
-//        actions.accept(TestAction.changedQueryWithProcessing("TOK"))
-//        actions.accept(TestAction.changedQueryWithProcessing("TRIM"))
-//        wait(for: [exp], timeout: 3)
-//    }
+    
+    func testInitialActionsAreEmitted() {
+        sut.initialActionsStream = Observable.of(SomeAction.initial, SomeAction.initial, SomeAction.initial)
+        let exp = self.expectation(description: "Test initial action is emitted")
+        
+        sut.state.skip(3).subscribe(onNext: { (state) in
+            if state.initialCount != 3 {
+                XCTFail("There shouldn't be more than 3 actions emitted")
+            } else {
+                exp.fulfill()
+            }
+        }).disposed(by: disposeBag)
+        
+        sut.start()
+        
+        wait(for: [exp], timeout: 1.5)
+    }
+    
+    func testInitialMutationsAreEmitted() {
+        sut.initialEventsStream = Observable.of(SomeMutation.initial, SomeMutation.initial, SomeMutation.initial)
+        let exp = self.expectation(description: "Test initial mutation is emitted")
+        
+        sut.state.skip(3).subscribe(onNext: { (state) in
+            if state.initialCount == 3 {
+                exp.fulfill()
+            } else {
+                XCTFail("There shouldn't be more than 3 mutations emitted")
+            }
+        }).disposed(by: disposeBag)
+        
+        sut.start()
+        
+        wait(for: [exp], timeout: 1.5)
+    }
+
+    func testTransformState() {
+        sut.initialEventsStream = Observable.of(SomeMutation.initial, SomeMutation.initial, SomeMutation.initial)
+        sut.transformedState = SomeState(initialCount: 0,
+                                         transformed: true,
+                                         transformedActionCount: 0,
+                                         transformedMutation: 0)
+        
+        let exp = self.expectation(description: "Test initial state is transformed")
+        
+        // skip because the first will always be the initial state
+        sut.state.skip(3).subscribe(onNext: { (state) in
+            guard state.initialCount == 0 && state.transformed == true else {
+                XCTFail("State was not transformed properly")
+                return
+            }
+            exp.fulfill()
+
+        }).disposed(by: disposeBag)
+        
+        sut.start()
+        
+        wait(for: [exp], timeout: 1.5)
+    }
+    
+    func testTransformActions() {
+        sut.forcedAction = SomeAction.transformed
+        
+        let exp = self.expectation(description: "Test actions are transformed")
+        
+        sut.state.skip(3).subscribe(onNext: { (state) in
+            guard state.transformedActionCount == 3
+                && state.transformed == false
+                && state.transformedMutation == 0 else {
+                    XCTFail("Actions was not transformed properly")
+                    return
+            }
+            exp.fulfill()
+            
+        }).disposed(by: disposeBag)
+        
+        sut.start()
+        sut.actions.accept(SomeAction.initial)
+        sut.actions.accept(SomeAction.initial)
+        sut.actions.accept(SomeAction.initial)
+
+        wait(for: [exp], timeout: 1.5)
+    }
+    
 //
 //    func testTransformAction() {
 //        let exp = self.expectation(description: "Test transform action")

@@ -1,6 +1,6 @@
 //
 //  CoordinatorTests.swift
-//  hFlowTests
+//  ArcusTests
 //
 //  Created by Hadrien Mazelier on 31/07/2018.
 //  Copyright © 2018 HadrienMazelier. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 import RxSwift
 import RxCocoa
-@testable import hFlow
+@testable import Arcus
 
 private enum Steposs: Step {
     case one
