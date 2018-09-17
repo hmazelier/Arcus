@@ -12,7 +12,6 @@ import RxSwift
 import RxCocoa
 @testable import Arcus
 
-///// TESTS
 private struct SomeState: State {
     var dummy = 0
 }
@@ -55,8 +54,6 @@ private class SUT: Reducer, StepProducer {
     }
     
 }
-
-////////
 
 class ReducerStepProducerTests: XCTestCase {
     

@@ -12,7 +12,6 @@ import RxSwift
 import RxCocoa
 @testable import Arcus
 
-///// TESTS
 private struct SomeState: State {
     var count = 0
 }
@@ -71,8 +70,6 @@ private class SomePresenter: Presenter {
             .disposed(by: disposeBag)
     }
 }
-
-////////
 
 class ViewModelerTests: XCTestCase {
     

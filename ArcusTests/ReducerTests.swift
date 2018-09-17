@@ -12,7 +12,6 @@ import RxSwift
 import RxCocoa
 @testable import Arcus
 
-///// TESTS
 private struct SomeState: State {
     var initialCount = 0
     var transformed = false
@@ -109,7 +108,6 @@ private class SUT: Reducer {
     
 }
 
-////////
 
 class ReducerTests: XCTestCase {
     
