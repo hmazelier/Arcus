@@ -12,13 +12,11 @@ import RxCocoa
 
 private var processingEventKey = "processingEventKey"
 
-public protocol ProcessingEventEmitter {
+public protocol ProcessingEventEmitter: AssociatedObjectStore {
     var processingEvents: PublishRelay<ProcessingEvent> { get }
 }
 
-public protocol AutoProcessingEventEmitter: ProcessingEventEmitter, AssociatedObjectStore { }
-
-extension AutoProcessingEventEmitter {
+extension ProcessingEventEmitter {
     public var processingEvents: PublishRelay<ProcessingEvent> {
         return self.associatedObject(forKey: &processingEventKey, default: .init())
     }

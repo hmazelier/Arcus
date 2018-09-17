@@ -48,8 +48,17 @@ extension Reducer {
     }
 }
 extension Reducer {
-    func extractStepsFromEvents(_ events: Observable<Event>) { }
-    func extractProcessingEventsFromEvents(_ events: Observable<Event>) { }
+    func extractStepsFromEvents(_ events: Observable<Event>) {
+        guard let this = self as? StepProducer else { return }
+        events.tryMap(to: Step.self).bind(to: this.step).disposed(by: disposeBag)
+    }
+    func extractProcessingEventsFromEvents(_ events: Observable<Event>) {
+        guard let this = self as? ProcessingEventEmitter else { return }
+        events
+            .tryMap(to: ProcessingEvent.self)
+            .bind(to: this.processingEvents)
+            .disposed(by: disposeBag)
+    }
     
     func getTransformedEvents(from actions: Observable<Action>) -> ConnectableObservable<Event> {
         
@@ -115,56 +124,6 @@ extension Reducer {
         
         connectableTranformedMutatedState.connect().disposed(by: disposeBag)
         transformedConnectableEvents.connect().disposed(by: disposeBag)
-        connectableActions.connect().disposed(by: disposeBag)
-        
-        return actionsRelay
-    }
-}
-
-extension Reducer where Self: StepProducer {
-    func extractStepsFromEvents(_ events: Observable<Event>) {
-        let steps = events.tryMap(to: Step.self)
-        steps
-            .bind(to: self.step)
-            .disposed(by: disposeBag)
-    }
-}
-
-extension Reducer where Self: ProcessingEventEmitter {
-    func extractProcessingEventsFromEvents(_ events: Observable<Event>) {
-        events
-            .tryMap(to: ProcessingEvent.self)
-            .bind(to: self.processingEvents)
-            .disposed(by: disposeBag)
-    }
-}
-
-extension Reducer where Self: ViewModeler {
-    
-    public var actions: PublishRelay<Action> {
-        return self.associatedObject(forKey: &actionsKey, default: provideInitialActionsRelay())
-    }
-    
-    func provideInitialActionsRelay() -> PublishRelay<Action> {
-        let actionsRelay = PublishRelay<Action>()
-        
-        let connectableActions = actionsRelay.asObservable().publish()
-        
-        let transformedConnectableEvents = self.getTransformedEvents(from: connectableActions)
-        
-        self.extractStepsFromEvents(transformedConnectableEvents)
-        self.extractProcessingEventsFromEvents(transformedConnectableEvents)
-        
-        let connectableTranformedMutatedState = self.getMutatedTransformedState(from: transformedConnectableEvents)
-        
-        self.presenter.bind(state: connectableTranformedMutatedState as! Observable<State>, toViewModel: self.viewModel)
-        
-        connectableTranformedMutatedState
-            .bind(to: self.state)
-            .disposed(by: self.disposeBag)
-        
-        transformedConnectableEvents.connect().disposed(by: disposeBag)
-        connectableTranformedMutatedState.connect().disposed(by: disposeBag)
         connectableActions.connect().disposed(by: disposeBag)
         
         return actionsRelay

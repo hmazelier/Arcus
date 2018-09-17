@@ -22,6 +22,15 @@ private struct SomeState: State {
 private enum SomeAction: Action {
     case initial
     case transformed
+    case error
+}
+
+private enum UnknownAction: Action {
+    case yo
+}
+
+private enum SomeError: Error {
+    case damn
 }
 
 private enum SomeProcessingEvent: ProcessingEvent {
@@ -39,6 +48,7 @@ private class SUT: Reducer {
     var initialEventsStream: Observable<Arcus.Event> = .empty()
     var transformedState: StateType?
     var forcedAction: ActionType?
+    var forcedEvent: Arcus.Event?
     
     func provideInitialState() -> SomeState {
         return forcedState
@@ -56,6 +66,7 @@ private class SUT: Reducer {
         switch action {
         case .initial: return Observable.just(SomeMutation.initial)
         case .transformed: return Observable.just(SomeMutation.transformedAction)
+        case .error: return Observable.error(SomeError.damn)
         }
     }
     
@@ -85,6 +96,14 @@ private class SUT: Reducer {
             return actions.map { _ in return transformedAction }
         } else {
             return actions
+        }
+    }
+    
+    func transform(events: Observable<Arcus.Event>) -> Observable<Arcus.Event> {
+        if let forcedEvent = self.forcedEvent {
+            return events.map { _ in return forcedEvent }
+        } else {
+            return events
         }
     }
     
@@ -206,45 +225,94 @@ class ReducerTests: XCTestCase {
         wait(for: [exp], timeout: 1.5)
     }
     
-//
-//    func testTransformAction() {
-//        let exp = self.expectation(description: "Test transform action")
-//        sut.forcedAction = TestAction.changedQuery("FORCED")
-//        //skip one because initial state will be the default
-//        var count = 0
-//        sut.state.skip(1).subscribe(onNext: { (state) in
-//            XCTAssertEqual(state.query, "FORCED")
-//            if count == 1 {
-//                exp.fulfill()
-//            }
-//            count += 1
-//
-//        }).disposed(by: disposeBag)
-//        sut.bind(actions: actions.asObservable())
-//        actions.accept(TestAction.changedQuery("NOT_FORCED"))
-//        actions.accept(TestAction.changedQuery("NOT_FORCED_AT_ALL"))
-//        actions.accept(TestAction.changedQuery("FUCK_OFF"))
-//        wait(for: [exp], timeout: 3)
-//    }
-//
-//    func testTransformMutation() {
-//        let exp = self.expectation(description: "Test transform mutation")
-//        sut.forcedMutation = TestMutation.changeQuery("FORCED")
-//        //skip one because initial state will be the default
-//        var count = 0
-//        sut.state.skip(1).subscribe(onNext: { (state) in
-//            XCTAssertEqual(state.query, "FORCED")
-//            if count == 1 {
-//                exp.fulfill()
-//            }
-//            count += 1
-//
-//        }).disposed(by: disposeBag)
-//        sut.bind(actions: actions.asObservable())
-//        actions.accept(TestAction.changedQuery("NOT_FORCED"))
-//        actions.accept(TestAction.changedQuery("NOT_FORCED_AT_ALL"))
-//        actions.accept(TestAction.changedQuery("FUCK_OFF"))
-//        wait(for: [exp], timeout: 3)
-//    }
+    func testTransformEvents() {
+        sut.forcedEvent = SomeMutation.transformed
+        
+        let exp = self.expectation(description: "Test events are transformed")
+        
+        sut.state.skip(3).subscribe(onNext: { (state) in
+            guard state.transformedMutation == 3
+                && state.transformed == false
+                && state.transformedActionCount == 0 else {
+                    XCTFail("Events are not transformed properly")
+                    return
+            }
+            exp.fulfill()
+            
+        }).disposed(by: disposeBag)
+        
+        sut.start()
+        sut.actions.accept(SomeAction.initial)
+        sut.actions.accept(SomeAction.initial)
+        sut.actions.accept(SomeAction.initial)
+        
+        wait(for: [exp], timeout: 1.5)
+    }
     
+    func testRetryEvent() {
+        
+        let exp = self.expectation(description: "Test retry")
+        
+        sut.state.skip(3).subscribe(onNext: { (state) in
+            guard state.transformedActionCount == 3
+                && state.transformed == false
+                && state.transformedMutation == 0 else {
+                    XCTFail("Retry doesnt work properly")
+                    return
+            }
+            exp.fulfill()
+            
+        }).disposed(by: disposeBag)
+        
+        sut.start()
+        sut.actions.accept(SomeAction.transformed)
+        sut.actions.accept(SomeAction.transformed)
+        sut.actions.accept(Events.retry)
+        
+        wait(for: [exp], timeout: 1.5)
+    }
+    
+    func testEventsStreamIsNotBrokenWhenNotRecognizedActionReceived() {
+        
+        let exp = self.expectation(description: "Test stream not broken when not recognized action")
+        
+        sut.state.skip(3).subscribe(onNext: { (state) in
+            guard state.transformedActionCount == 3 else {
+                    XCTFail("Stream might be broken after receiving an unknown action")
+                    return
+            }
+            exp.fulfill()
+            
+        }).disposed(by: disposeBag)
+        
+        sut.start()
+        sut.actions.accept(SomeAction.transformed)
+        sut.actions.accept(UnknownAction.yo)
+        sut.actions.accept(SomeAction.transformed)
+        sut.actions.accept(SomeAction.transformed)
+        
+        wait(for: [exp], timeout: 1.5)
+    }
+    
+    func testErrorDoesntCompleteTheStream() {
+        
+        let exp = self.expectation(description: "Test stream isnt completed when receives error")
+        
+        sut.state.skip(3).subscribe(onNext: { (state) in
+            guard state.initialCount == 3 else {
+                    XCTFail("Stream might have completed on error")
+                    return
+            }
+            exp.fulfill()
+            
+        }).disposed(by: disposeBag)
+        
+        sut.start()
+        sut.actions.accept(SomeAction.initial)
+        sut.actions.accept(SomeAction.initial)
+        sut.actions.accept(SomeAction.error)
+        sut.actions.accept(SomeAction.initial)
+        
+        wait(for: [exp], timeout: 1.5)
+    }
 }

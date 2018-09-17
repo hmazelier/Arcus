@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		521FD1752149B8C5008D1A87 /* Arcus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521FD16B2149B8C4008D1A87 /* Arcus.framework */; };
-		521FD17A2149B8C5008D1A87 /* ArcusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1792149B8C5008D1A87 /* ArcusTests.swift */; };
 		521FD17C2149B8C5008D1A87 /* Arcus.h in Headers */ = {isa = PBXBuildFile; fileRef = 521FD16E2149B8C4008D1A87 /* Arcus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		521FD1932149B967008D1A87 /* AssociatedObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1852149B967008D1A87 /* AssociatedObjectStore.swift */; };
 		521FD1942149B967008D1A87 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1872149B967008D1A87 /* Coordinator.swift */; };
 		521FD1952149B967008D1A87 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1882149B967008D1A87 /* Events.swift */; };
 		521FD1962149B967008D1A87 /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1892149B967008D1A87 /* Observable+.swift */; };
 		521FD1972149B967008D1A87 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18B2149B967008D1A87 /* Reducer.swift */; };
-		521FD1982149B967008D1A87 /* ViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18C2149B967008D1A87 /* ViewOutput.swift */; };
 		521FD1992149B967008D1A87 /* ProcessingEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */; };
 		521FD19A2149B967008D1A87 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18E2149B967008D1A87 /* Presenter.swift */; };
 		521FD19B2149B967008D1A87 /* ViewModeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18F2149B967008D1A87 /* ViewModeler.swift */; };
 		521FD19C2149B967008D1A87 /* Reducer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1902149B967008D1A87 /* Reducer+.swift */; };
-		521FD19D2149B967008D1A87 /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1912149B967008D1A87 /* Stepper.swift */; };
+		521FD19D2149B967008D1A87 /* StepProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1912149B967008D1A87 /* StepProducer.swift */; };
 		521FD19E2149B967008D1A87 /* HasDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1922149B967008D1A87 /* HasDisposeBag.swift */; };
-		521FD1A32149B978008D1A87 /* ArcusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD19F2149B977008D1A87 /* ArcusTests.swift */; };
 		521FD1A42149B978008D1A87 /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A02149B978008D1A87 /* ReducerTests.swift */; };
 		521FD1A52149B978008D1A87 /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A12149B978008D1A87 /* InteractorTests.swift */; };
 		521FD1A62149B978008D1A87 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A22149B978008D1A87 /* CoordinatorTests.swift */; };
+		52FF3885214C2E3400A9026B /* Reducer+StepProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */; };
+		52FF3887214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */; };
+		52FF3889214C3FC000A9026B /* ViewModelerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF3888214C3FC000A9026B /* ViewModelerTests.swift */; };
+		545C10B44181756CDCF0E29A /* Pods_Arcus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2503B81DCA8F8C37EA25FC74 /* Pods_Arcus.framework */; };
+		8AC4B157EE42A3E065616628 /* Pods_Arcus_ArcusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08AF19695E5CA22855BD1A8 /* Pods_Arcus_ArcusTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,28 +41,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03F0A274DCBAAF21995F4663 /* Pods-Arcus-ArcusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arcus-ArcusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arcus-ArcusTests/Pods-Arcus-ArcusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2503B81DCA8F8C37EA25FC74 /* Pods_Arcus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arcus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		521FD16B2149B8C4008D1A87 /* Arcus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arcus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		521FD16E2149B8C4008D1A87 /* Arcus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arcus.h; sourceTree = "<group>"; };
 		521FD16F2149B8C4008D1A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521FD1742149B8C4008D1A87 /* ArcusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		521FD1792149B8C5008D1A87 /* ArcusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcusTests.swift; sourceTree = "<group>"; };
 		521FD17B2149B8C5008D1A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521FD1852149B967008D1A87 /* AssociatedObjectStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObjectStore.swift; sourceTree = "<group>"; };
 		521FD1872149B967008D1A87 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		521FD1882149B967008D1A87 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		521FD1892149B967008D1A87 /* Observable+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
 		521FD18B2149B967008D1A87 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
-		521FD18C2149B967008D1A87 /* ViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOutput.swift; sourceTree = "<group>"; };
 		521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingEventEmitter.swift; sourceTree = "<group>"; };
 		521FD18E2149B967008D1A87 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		521FD18F2149B967008D1A87 /* ViewModeler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModeler.swift; sourceTree = "<group>"; };
 		521FD1902149B967008D1A87 /* Reducer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reducer+.swift"; sourceTree = "<group>"; };
-		521FD1912149B967008D1A87 /* Stepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
+		521FD1912149B967008D1A87 /* StepProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepProducer.swift; sourceTree = "<group>"; };
 		521FD1922149B967008D1A87 /* HasDisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasDisposeBag.swift; sourceTree = "<group>"; };
-		521FD19F2149B977008D1A87 /* ArcusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcusTests.swift; sourceTree = "<group>"; };
 		521FD1A02149B978008D1A87 /* ReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerTests.swift; sourceTree = "<group>"; };
 		521FD1A12149B978008D1A87 /* InteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
 		521FD1A22149B978008D1A87 /* CoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+StepProducerTests.swift"; sourceTree = "<group>"; };
+		52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+ProcessingEventEmitterTests.swift"; sourceTree = "<group>"; };
+		52FF3888214C3FC000A9026B /* ViewModelerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelerTests.swift; sourceTree = "<group>"; };
+		77443E4E8EA4A8FA6BB077D9 /* Pods-Arcus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arcus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arcus/Pods-Arcus.release.xcconfig"; sourceTree = "<group>"; };
+		D08AF19695E5CA22855BD1A8 /* Pods_Arcus_ArcusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arcus_ArcusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AB8F091B4445CF3A7C6FC9 /* Pods-Arcus-ArcusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arcus-ArcusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arcus-ArcusTests/Pods-Arcus-ArcusTests.release.xcconfig"; sourceTree = "<group>"; };
+		DD373216CEBA97342027B1D8 /* Pods-Arcus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arcus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arcus/Pods-Arcus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545C10B44181756CDCF0E29A /* Pods_Arcus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				521FD1752149B8C5008D1A87 /* Arcus.framework in Frameworks */,
+				8AC4B157EE42A3E065616628 /* Pods_Arcus_ArcusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +98,8 @@
 				521FD16D2149B8C4008D1A87 /* Arcus */,
 				521FD1782149B8C5008D1A87 /* ArcusTests */,
 				521FD16C2149B8C4008D1A87 /* Products */,
+				A48148BC2FDDA8996C154447 /* Pods */,
+				7F71241915B26FFBFFD299DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +122,9 @@
 				521FD1882149B967008D1A87 /* Events.swift */,
 				521FD1922149B967008D1A87 /* HasDisposeBag.swift */,
 				521FD1892149B967008D1A87 /* Observable+.swift */,
+				521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */,
+				521FD18B2149B967008D1A87 /* Reducer.swift */,
+				521FD1902149B967008D1A87 /* Reducer+.swift */,
 				521FD18A2149B967008D1A87 /* Scene */,
 			);
 			path = Arcus;
@@ -118,12 +133,13 @@
 		521FD1782149B8C5008D1A87 /* ArcusTests */ = {
 			isa = PBXGroup;
 			children = (
-				521FD1792149B8C5008D1A87 /* ArcusTests.swift */,
-				521FD19F2149B977008D1A87 /* ArcusTests.swift */,
+				521FD1A02149B978008D1A87 /* ReducerTests.swift */,
 				521FD1A22149B978008D1A87 /* CoordinatorTests.swift */,
 				521FD1A12149B978008D1A87 /* InteractorTests.swift */,
-				521FD1A02149B978008D1A87 /* ReducerTests.swift */,
 				521FD17B2149B8C5008D1A87 /* Info.plist */,
+				52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */,
+				52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */,
+				52FF3888214C3FC000A9026B /* ViewModelerTests.swift */,
 			);
 			path = ArcusTests;
 			sourceTree = "<group>";
@@ -139,15 +155,31 @@
 		521FD18A2149B967008D1A87 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				521FD18B2149B967008D1A87 /* Reducer.swift */,
-				521FD18C2149B967008D1A87 /* ViewOutput.swift */,
-				521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */,
 				521FD18E2149B967008D1A87 /* Presenter.swift */,
 				521FD18F2149B967008D1A87 /* ViewModeler.swift */,
-				521FD1902149B967008D1A87 /* Reducer+.swift */,
-				521FD1912149B967008D1A87 /* Stepper.swift */,
+				521FD1912149B967008D1A87 /* StepProducer.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		7F71241915B26FFBFFD299DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2503B81DCA8F8C37EA25FC74 /* Pods_Arcus.framework */,
+				D08AF19695E5CA22855BD1A8 /* Pods_Arcus_ArcusTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A48148BC2FDDA8996C154447 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD373216CEBA97342027B1D8 /* Pods-Arcus.debug.xcconfig */,
+				77443E4E8EA4A8FA6BB077D9 /* Pods-Arcus.release.xcconfig */,
+				03F0A274DCBAAF21995F4663 /* Pods-Arcus-ArcusTests.debug.xcconfig */,
+				D2AB8F091B4445CF3A7C6FC9 /* Pods-Arcus-ArcusTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 521FD17F2149B8C5008D1A87 /* Build configuration list for PBXNativeTarget "Arcus" */;
 			buildPhases = (
+				EC9E6CF1962DCF6DDDF427C8 /* [CP] Check Pods Manifest.lock */,
 				521FD1662149B8C4008D1A87 /* Sources */,
 				521FD1672149B8C4008D1A87 /* Frameworks */,
 				521FD1682149B8C4008D1A87 /* Headers */,
@@ -186,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 521FD1822149B8C5008D1A87 /* Build configuration list for PBXNativeTarget "ArcusTests" */;
 			buildPhases = (
+				26B2D566AE9E66682116E7A0 /* [CP] Check Pods Manifest.lock */,
 				521FD1702149B8C4008D1A87 /* Sources */,
 				521FD1712149B8C4008D1A87 /* Frameworks */,
 				521FD1722149B8C4008D1A87 /* Resources */,
+				40750E9DC42284221F83A57B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +289,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26B2D566AE9E66682116E7A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arcus-ArcusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40750E9DC42284221F83A57B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Arcus-ArcusTests/Pods-Arcus-ArcusTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arcus-ArcusTests/Pods-Arcus-ArcusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC9E6CF1962DCF6DDDF427C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arcus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		521FD1662149B8C4008D1A87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,8 +361,7 @@
 				521FD1992149B967008D1A87 /* ProcessingEventEmitter.swift in Sources */,
 				521FD1942149B967008D1A87 /* Coordinator.swift in Sources */,
 				521FD19C2149B967008D1A87 /* Reducer+.swift in Sources */,
-				521FD1982149B967008D1A87 /* ViewOutput.swift in Sources */,
-				521FD19D2149B967008D1A87 /* Stepper.swift in Sources */,
+				521FD19D2149B967008D1A87 /* StepProducer.swift in Sources */,
 				521FD1972149B967008D1A87 /* Reducer.swift in Sources */,
 				521FD1932149B967008D1A87 /* AssociatedObjectStore.swift in Sources */,
 			);
@@ -278,11 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FF3887214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift in Sources */,
+				52FF3889214C3FC000A9026B /* ViewModelerTests.swift in Sources */,
 				521FD1A42149B978008D1A87 /* ReducerTests.swift in Sources */,
 				521FD1A62149B978008D1A87 /* CoordinatorTests.swift in Sources */,
-				521FD1A32149B978008D1A87 /* ArcusTests.swift in Sources */,
+				52FF3885214C2E3400A9026B /* Reducer+StepProducerTests.swift in Sources */,
 				521FD1A52149B978008D1A87 /* InteractorTests.swift in Sources */,
-				521FD17A2149B8C5008D1A87 /* ArcusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +513,7 @@
 		};
 		521FD1802149B8C5008D1A87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD373216CEBA97342027B1D8 /* Pods-Arcus.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -446,6 +541,7 @@
 		};
 		521FD1812149B8C5008D1A87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77443E4E8EA4A8FA6BB077D9 /* Pods-Arcus.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -472,6 +568,7 @@
 		};
 		521FD1832149B8C5008D1A87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03F0A274DCBAAF21995F4663 /* Pods-Arcus-ArcusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -491,6 +588,7 @@
 		};
 		521FD1842149B8C5008D1A87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2AB8F091B4445CF3A7C6FC9 /* Pods-Arcus-ArcusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
