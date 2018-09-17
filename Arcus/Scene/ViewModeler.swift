@@ -22,7 +22,7 @@ public protocol ViewModeler: Reducer {
 
 private var actionsKey = "actionsKey_"
 
-extension ViewModeler where Self: ViewModeler {
+extension ViewModeler where PresenterType.StateType == StateType, PresenterType.ViewModelType == ViewModelType {
     
     public var actions: PublishRelay<Action> {
         return self.associatedObject(forKey: &actionsKey, default: provideInitialActionsRelay())
@@ -40,7 +40,7 @@ extension ViewModeler where Self: ViewModeler {
         
         let connectableTranformedMutatedState = self.getMutatedTransformedState(from: transformedConnectableEvents)
         
-        self.presenter.bind(state: connectableTranformedMutatedState.tryMap(to: State.self), toViewModel: self.viewModel)
+        self.presenter.bind(state: connectableTranformedMutatedState.asObservable(), toViewModel: self.viewModel)
         
         connectableTranformedMutatedState
             .bind(to: self.state)

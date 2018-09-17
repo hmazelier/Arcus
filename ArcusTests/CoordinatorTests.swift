@@ -71,8 +71,8 @@ private class SUT: Coordinator {
     var lastStepCallback: (Step?) -> () = { _ in }
     var lastViewController: UIViewController?
     
-    func handle(step: Step, from viewController: UIViewController?) {
-        lastViewController = viewController
+    func handle(step: Step, from presentable: Presentable?) {
+        lastViewController = presentable as? UIViewController
         lastStepCallback(step)
     }
     
@@ -110,9 +110,9 @@ private class SpyCoordinator: Coordinator {
         self.addChild(sut)
     }
     
-    func handle(step: Step, from viewController: UIViewController?) {
+    func handle(step: Step, from presentable: Presentable?) {
         lastStep = step
-        lastViewController = viewController
+        lastViewController = presentable as? UIViewController
     }
     
     func handle(step: Step, from coordinator: Coordinator) {

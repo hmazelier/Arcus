@@ -21,7 +21,6 @@
 		521FD19D2149B967008D1A87 /* StepProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1912149B967008D1A87 /* StepProducer.swift */; };
 		521FD19E2149B967008D1A87 /* HasDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1922149B967008D1A87 /* HasDisposeBag.swift */; };
 		521FD1A42149B978008D1A87 /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A02149B978008D1A87 /* ReducerTests.swift */; };
-		521FD1A52149B978008D1A87 /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A12149B978008D1A87 /* InteractorTests.swift */; };
 		521FD1A62149B978008D1A87 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A22149B978008D1A87 /* CoordinatorTests.swift */; };
 		52FF3885214C2E3400A9026B /* Reducer+StepProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */; };
 		52FF3887214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */; };
@@ -60,7 +59,6 @@
 		521FD1912149B967008D1A87 /* StepProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepProducer.swift; sourceTree = "<group>"; };
 		521FD1922149B967008D1A87 /* HasDisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasDisposeBag.swift; sourceTree = "<group>"; };
 		521FD1A02149B978008D1A87 /* ReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerTests.swift; sourceTree = "<group>"; };
-		521FD1A12149B978008D1A87 /* InteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
 		521FD1A22149B978008D1A87 /* CoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+StepProducerTests.swift"; sourceTree = "<group>"; };
 		52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+ProcessingEventEmitterTests.swift"; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 			children = (
 				521FD1A02149B978008D1A87 /* ReducerTests.swift */,
 				521FD1A22149B978008D1A87 /* CoordinatorTests.swift */,
-				521FD1A12149B978008D1A87 /* InteractorTests.swift */,
 				521FD17B2149B8C5008D1A87 /* Info.plist */,
 				52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */,
 				52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */,
@@ -376,7 +373,6 @@
 				521FD1A42149B978008D1A87 /* ReducerTests.swift in Sources */,
 				521FD1A62149B978008D1A87 /* CoordinatorTests.swift in Sources */,
 				52FF3885214C2E3400A9026B /* Reducer+StepProducerTests.swift in Sources */,
-				521FD1A52149B978008D1A87 /* InteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

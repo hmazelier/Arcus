@@ -20,7 +20,7 @@ public protocol Coordinator: HasDisposeBag {
     var root: UIViewController? { get }
     var parent: Coordinator? { get set }
     var children: [Coordinator] { get set }
-    func handle(step: Step, from viewController: UIViewController?)
+    func handle(step: Step, from presentable: Presentable?)
     func handle(step: Step, from coordinator: Coordinator)
     func transform(steps: Observable<Step>) -> Observable<Step> //optional
     func closeChild(coordinator: Coordinator, with step: Step?)

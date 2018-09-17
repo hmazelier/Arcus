@@ -60,9 +60,11 @@ private struct SomeViewModel: Arcus.ViewModel {
 
 private class SomePresenter: Presenter {
     
-    func bind(state: Observable<State>, toViewModel viewModel: ViewModel) {
-        guard let viewModel = viewModel as? SomeViewModel else { return }
-        let convertedState = state.tryMap(to: SomeState.self).share()
+    typealias StateType = SomeState
+    typealias ViewModelType = SomeViewModel
+    
+    func bind(state: Observable<SomeState>, toViewModel viewModel: SomeViewModel) {
+        let convertedState = state.share()
         convertedState
             .map { $0.count }
             .bind(to: viewModel.count)
