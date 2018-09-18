@@ -26,6 +26,7 @@ class BasicCounterReducerTests: XCTestCase {
         let exp = self.expectation(description: "Test counter is incremented")
         sut.state.asObservable().skip(2).take(1).subscribe(onNext: { state in
             XCTAssertTrue(state.count == 2)
+            exp.fulfill()
         }).disposed(by: disposeBag)
         
         sut.actions.accept(BasicCounter.Actions.increment)
@@ -34,6 +35,14 @@ class BasicCounterReducerTests: XCTestCase {
     }
     
     func testDecrement() {
+        let exp = self.expectation(description: "Test counter is decremented")
+        sut.state.asObservable().skip(2).take(1).subscribe(onNext: { state in
+            XCTAssertTrue(state.count == -2)
+            exp.fulfill()
+        }).disposed(by: disposeBag)
         
+        sut.actions.accept(BasicCounter.Actions.decrement)
+        sut.actions.accept(BasicCounter.Actions.decrement)
+        wait(for: [exp], timeout: 1)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527656332151A19700A955A6 /* GithubSearchReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527656322151A19700A955A6 /* GithubSearchReducerTests.swift */; };
 		5292600A2151978500384109 /* Arcus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529260092151978500384109 /* Arcus.framework */; };
 		5292600B2151978500384109 /* Arcus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529260092151978500384109 /* Arcus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52926017215197D100384109 /* BasicCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292600F215197D100384109 /* BasicCounter.swift */; };
@@ -52,6 +53,7 @@
 		17888A35D196DD2978A9E212 /* Pods-ArcusExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcusExample.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ArcusExample/Pods-ArcusExample.debug.xcconfig"; sourceTree = "<group>"; };
 		1BD12E18449D8F5BEEB76DDE /* Pods_ArcusExample_ArcusExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArcusExample_ArcusExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EA59727DB10C465E6136CE /* Pods-ArcusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcusExample.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ArcusExample/Pods-ArcusExample.release.xcconfig"; sourceTree = "<group>"; };
+		527656322151A19700A955A6 /* GithubSearchReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearchReducerTests.swift; sourceTree = "<group>"; };
 		529260092151978500384109 /* Arcus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Arcus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5292600F215197D100384109 /* BasicCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCounter.swift; sourceTree = "<group>"; };
 		52926010215197D100384109 /* BasicCounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCounterViewController.swift; sourceTree = "<group>"; };
@@ -160,8 +162,9 @@
 		52FF38E7215196B100A9026B /* ArcusExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				5292601E2151985500384109 /* BasicCounterReducerTests.swift */,
 				52FF38EA215196B100A9026B /* Info.plist */,
+				5292601E2151985500384109 /* BasicCounterReducerTests.swift */,
+				527656322151A19700A955A6 /* GithubSearchReducerTests.swift */,
 			);
 			path = ArcusExampleTests;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5292601F2151985500384109 /* BasicCounterReducerTests.swift in Sources */,
+				527656332151A19700A955A6 /* GithubSearchReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
