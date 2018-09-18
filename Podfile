@@ -9,6 +9,12 @@ def rx
     pod 'RxCocoa'
 end
 
+def utils
+    pod 'Swinject'
+    pod 'SwinjectAutoregistration'
+    pod 'SnapKit'
+end
+
 target 'Arcus' do
     project 'Arcus'
     rx
@@ -16,4 +22,13 @@ target 'Arcus' do
         rx
     end
 
+end
+
+target 'Example' do
+    rx
+    utils
+    target 'ExampleTests' do
+        rx
+        utils
+    end
 end

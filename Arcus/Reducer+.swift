@@ -23,7 +23,7 @@ extension Reducer {
         return self.associatedObject(forKey: &stateKey, default: BehaviorSubject(value: self.provideInitialState()))
     }
     
-    func provideInitialActionsStream() -> Observable<Action> {
+    public func provideInitialActionsStream() -> Observable<Action> {
         return .empty()
     }
     
