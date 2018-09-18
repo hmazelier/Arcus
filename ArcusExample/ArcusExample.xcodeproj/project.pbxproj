@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5292600A2151978500384109 /* Arcus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529260092151978500384109 /* Arcus.framework */; };
+		5292600B2151978500384109 /* Arcus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529260092151978500384109 /* Arcus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52926017215197D100384109 /* BasicCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292600F215197D100384109 /* BasicCounter.swift */; };
+		52926018215197D100384109 /* BasicCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52926010215197D100384109 /* BasicCounterViewController.swift */; };
+		52926019215197D100384109 /* BasicCounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52926011215197D100384109 /* BasicCounterReducer.swift */; };
+		5292601A215197D100384109 /* GithubSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52926013215197D100384109 /* GithubSearchViewController.swift */; };
+		5292601B215197D100384109 /* GithubSearchReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52926014215197D100384109 /* GithubSearchReducer.swift */; };
+		5292601C215197D100384109 /* GithubStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52926015215197D100384109 /* GithubStore.swift */; };
+		5292601D215197D100384109 /* GithubSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52926016215197D100384109 /* GithubSearch.swift */; };
+		5292601F2151985500384109 /* BasicCounterReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292601E2151985500384109 /* BasicCounterReducerTests.swift */; };
+		52FF38D4215196B000A9026B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF38D3215196B000A9026B /* AppDelegate.swift */; };
+		52FF38DB215196B100A9026B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52FF38DA215196B100A9026B /* Assets.xcassets */; };
+		52FF38DE215196B100A9026B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FF38DC215196B100A9026B /* LaunchScreen.storyboard */; };
+		9A42F25E3381607119C21F11 /* Pods_ArcusExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88FEC7470CBE06CDD2A4831 /* Pods_ArcusExample.framework */; };
+		FC859DE1C11F49626D970D51 /* Pods_ArcusExample_ArcusExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD12E18449D8F5BEEB76DDE /* Pods_ArcusExample_ArcusExampleTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52FF38E5215196B100A9026B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52FF38C8215196AF00A9026B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52FF38CF215196AF00A9026B;
+			remoteInfo = ArcusExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5292600C2151978500384109 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5292600B2151978500384109 /* Arcus.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		17888A35D196DD2978A9E212 /* Pods-ArcusExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcusExample.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ArcusExample/Pods-ArcusExample.debug.xcconfig"; sourceTree = "<group>"; };
+		1BD12E18449D8F5BEEB76DDE /* Pods_ArcusExample_ArcusExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArcusExample_ArcusExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28EA59727DB10C465E6136CE /* Pods-ArcusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcusExample.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ArcusExample/Pods-ArcusExample.release.xcconfig"; sourceTree = "<group>"; };
+		529260092151978500384109 /* Arcus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Arcus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5292600F215197D100384109 /* BasicCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCounter.swift; sourceTree = "<group>"; };
+		52926010215197D100384109 /* BasicCounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCounterViewController.swift; sourceTree = "<group>"; };
+		52926011215197D100384109 /* BasicCounterReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCounterReducer.swift; sourceTree = "<group>"; };
+		52926013215197D100384109 /* GithubSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchViewController.swift; sourceTree = "<group>"; };
+		52926014215197D100384109 /* GithubSearchReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchReducer.swift; sourceTree = "<group>"; };
+		52926015215197D100384109 /* GithubStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubStore.swift; sourceTree = "<group>"; };
+		52926016215197D100384109 /* GithubSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearch.swift; sourceTree = "<group>"; };
+		5292601E2151985500384109 /* BasicCounterReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCounterReducerTests.swift; sourceTree = "<group>"; };
+		52FF38D0215196AF00A9026B /* ArcusExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcusExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52FF38D3215196B000A9026B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52FF38DA215196B100A9026B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52FF38DD215196B100A9026B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52FF38DF215196B100A9026B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52FF38E4215196B100A9026B /* ArcusExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcusExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52FF38EA215196B100A9026B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98BD53288348F972ECB32A34 /* Pods-ArcusExample-ArcusExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcusExample-ArcusExampleTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ArcusExample-ArcusExampleTests/Pods-ArcusExample-ArcusExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		C88FEC7470CBE06CDD2A4831 /* Pods_ArcusExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArcusExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3E6B1C1074253B10133CBDF /* Pods-ArcusExample-ArcusExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcusExample-ArcusExampleTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ArcusExample-ArcusExampleTests/Pods-ArcusExample-ArcusExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52FF38CD215196AF00A9026B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A42F25E3381607119C21F11 /* Pods_ArcusExample.framework in Frameworks */,
+				5292600A2151978500384109 /* Arcus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FF38E1215196B100A9026B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC859DE1C11F49626D970D51 /* Pods_ArcusExample_ArcusExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5292600D215197D100384109 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				5292600E215197D100384109 /* BasicCounter */,
+				52926012215197D100384109 /* GithubSearch */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		5292600E215197D100384109 /* BasicCounter */ = {
+			isa = PBXGroup;
+			children = (
+				5292600F215197D100384109 /* BasicCounter.swift */,
+				52926010215197D100384109 /* BasicCounterViewController.swift */,
+				52926011215197D100384109 /* BasicCounterReducer.swift */,
+			);
+			path = BasicCounter;
+			sourceTree = "<group>";
+		};
+		52926012215197D100384109 /* GithubSearch */ = {
+			isa = PBXGroup;
+			children = (
+				52926013215197D100384109 /* GithubSearchViewController.swift */,
+				52926014215197D100384109 /* GithubSearchReducer.swift */,
+				52926015215197D100384109 /* GithubStore.swift */,
+				52926016215197D100384109 /* GithubSearch.swift */,
+			);
+			path = GithubSearch;
+			sourceTree = "<group>";
+		};
+		52FF38C7215196AF00A9026B = {
+			isa = PBXGroup;
+			children = (
+				529260092151978500384109 /* Arcus.framework */,
+				52FF38D2215196AF00A9026B /* ArcusExample */,
+				52FF38E7215196B100A9026B /* ArcusExampleTests */,
+				52FF38D1215196AF00A9026B /* Products */,
+				545CF21BDE8BED364D79D1F0 /* Pods */,
+				8B845E04A5F869F27886CC1F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52FF38D1215196AF00A9026B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52FF38D0215196AF00A9026B /* ArcusExample.app */,
+				52FF38E4215196B100A9026B /* ArcusExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52FF38D2215196AF00A9026B /* ArcusExample */ = {
+			isa = PBXGroup;
+			children = (
+				52FF38D3215196B000A9026B /* AppDelegate.swift */,
+				5292600D215197D100384109 /* Examples */,
+				52FF38DA215196B100A9026B /* Assets.xcassets */,
+				52FF38DC215196B100A9026B /* LaunchScreen.storyboard */,
+				52FF38DF215196B100A9026B /* Info.plist */,
+			);
+			path = ArcusExample;
+			sourceTree = "<group>";
+		};
+		52FF38E7215196B100A9026B /* ArcusExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				5292601E2151985500384109 /* BasicCounterReducerTests.swift */,
+				52FF38EA215196B100A9026B /* Info.plist */,
+			);
+			path = ArcusExampleTests;
+			sourceTree = "<group>";
+		};
+		545CF21BDE8BED364D79D1F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17888A35D196DD2978A9E212 /* Pods-ArcusExample.debug.xcconfig */,
+				28EA59727DB10C465E6136CE /* Pods-ArcusExample.release.xcconfig */,
+				D3E6B1C1074253B10133CBDF /* Pods-ArcusExample-ArcusExampleTests.debug.xcconfig */,
+				98BD53288348F972ECB32A34 /* Pods-ArcusExample-ArcusExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B845E04A5F869F27886CC1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C88FEC7470CBE06CDD2A4831 /* Pods_ArcusExample.framework */,
+				1BD12E18449D8F5BEEB76DDE /* Pods_ArcusExample_ArcusExampleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52FF38CF215196AF00A9026B /* ArcusExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52FF38ED215196B100A9026B /* Build configuration list for PBXNativeTarget "ArcusExample" */;
+			buildPhases = (
+				7883394260EE35676E8BC9B6 /* [CP] Check Pods Manifest.lock */,
+				52FF38CC215196AF00A9026B /* Sources */,
+				52FF38CD215196AF00A9026B /* Frameworks */,
+				52FF38CE215196AF00A9026B /* Resources */,
+				37E3942D0E467BBA49158A7D /* [CP] Embed Pods Frameworks */,
+				5292600C2151978500384109 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArcusExample;
+			productName = ArcusExample;
+			productReference = 52FF38D0215196AF00A9026B /* ArcusExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52FF38E3215196B100A9026B /* ArcusExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52FF38F0215196B100A9026B /* Build configuration list for PBXNativeTarget "ArcusExampleTests" */;
+			buildPhases = (
+				87EAAB2DB37A980895C2C675 /* [CP] Check Pods Manifest.lock */,
+				52FF38E0215196B100A9026B /* Sources */,
+				52FF38E1215196B100A9026B /* Frameworks */,
+				52FF38E2215196B100A9026B /* Resources */,
+				569F35785DA3ED684A221372 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52FF38E6215196B100A9026B /* PBXTargetDependency */,
+			);
+			name = ArcusExampleTests;
+			productName = ArcusExampleTests;
+			productReference = 52FF38E4215196B100A9026B /* ArcusExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52FF38C8215196AF00A9026B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = hadrienmazelier;
+				TargetAttributes = {
+					52FF38CF215196AF00A9026B = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					52FF38E3215196B100A9026B = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 52FF38CF215196AF00A9026B;
+					};
+				};
+			};
+			buildConfigurationList = 52FF38CB215196AF00A9026B /* Build configuration list for PBXProject "ArcusExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52FF38C7215196AF00A9026B;
+			productRefGroup = 52FF38D1215196AF00A9026B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52FF38CF215196AF00A9026B /* ArcusExample */,
+				52FF38E3215196B100A9026B /* ArcusExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52FF38CE215196AF00A9026B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52FF38DE215196B100A9026B /* LaunchScreen.storyboard in Resources */,
+				52FF38DB215196B100A9026B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FF38E2215196B100A9026B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37E3942D0E467BBA49158A7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-ArcusExample/Pods-ArcusExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectAutoregistration.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ArcusExample/Pods-ArcusExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		569F35785DA3ED684A221372 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-ArcusExample-ArcusExampleTests/Pods-ArcusExample-ArcusExampleTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectAutoregistration.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ArcusExample-ArcusExampleTests/Pods-ArcusExample-ArcusExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7883394260EE35676E8BC9B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArcusExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87EAAB2DB37A980895C2C675 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArcusExample-ArcusExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52FF38CC215196AF00A9026B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5292601A215197D100384109 /* GithubSearchViewController.swift in Sources */,
+				52926019215197D100384109 /* BasicCounterReducer.swift in Sources */,
+				52926018215197D100384109 /* BasicCounterViewController.swift in Sources */,
+				5292601B215197D100384109 /* GithubSearchReducer.swift in Sources */,
+				52FF38D4215196B000A9026B /* AppDelegate.swift in Sources */,
+				52926017215197D100384109 /* BasicCounter.swift in Sources */,
+				5292601D215197D100384109 /* GithubSearch.swift in Sources */,
+				5292601C215197D100384109 /* GithubStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FF38E0215196B100A9026B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5292601F2151985500384109 /* BasicCounterReducerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52FF38E6215196B100A9026B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52FF38CF215196AF00A9026B /* ArcusExample */;
+			targetProxy = 52FF38E5215196B100A9026B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52FF38DC215196B100A9026B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52FF38DD215196B100A9026B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52FF38EB215196B100A9026B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52FF38EC215196B100A9026B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52FF38EE215196B100A9026B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17888A35D196DD2978A9E212 /* Pods-ArcusExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGLU7NB6HQ;
+				INFOPLIST_FILE = ArcusExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadrienmazelier.ArcusExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52FF38EF215196B100A9026B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28EA59727DB10C465E6136CE /* Pods-ArcusExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGLU7NB6HQ;
+				INFOPLIST_FILE = ArcusExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadrienmazelier.ArcusExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52FF38F1215196B100A9026B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3E6B1C1074253B10133CBDF /* Pods-ArcusExample-ArcusExampleTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGLU7NB6HQ;
+				INFOPLIST_FILE = ArcusExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadrienmazelier.ArcusExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArcusExample.app/ArcusExample";
+			};
+			name = Debug;
+		};
+		52FF38F2215196B100A9026B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98BD53288348F972ECB32A34 /* Pods-ArcusExample-ArcusExampleTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGLU7NB6HQ;
+				INFOPLIST_FILE = ArcusExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadrienmazelier.ArcusExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArcusExample.app/ArcusExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52FF38CB215196AF00A9026B /* Build configuration list for PBXProject "ArcusExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52FF38EB215196B100A9026B /* Debug */,
+				52FF38EC215196B100A9026B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52FF38ED215196B100A9026B /* Build configuration list for PBXNativeTarget "ArcusExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52FF38EE215196B100A9026B /* Debug */,
+				52FF38EF215196B100A9026B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52FF38F0215196B100A9026B /* Build configuration list for PBXNativeTarget "ArcusExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52FF38F1215196B100A9026B /* Debug */,
+				52FF38F2215196B100A9026B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52FF38C8215196AF00A9026B /* Project object */;
+}

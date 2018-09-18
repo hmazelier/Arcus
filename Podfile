@@ -24,10 +24,11 @@ target 'Arcus' do
 
 end
 
-target 'Example' do
+target 'ArcusExample' do
+    project 'ArcusExample/ArcusExample'
     rx
     utils
-    target 'ExampleTests' do
+    target 'ArcusExampleTests' do
         rx
         utils
     end
