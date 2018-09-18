@@ -17,11 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let resolver: Resolver = {
         let container = Container()
+        // global
         container.register(Resolver.self, factory: { _ -> Resolver in
             return container
         })
+        // Basic Counter
         container.autoregister(BasicCounterViewController.self, initializer: BasicCounterViewController.init)
         container.autoregister(BasicCounterReducerProtocol.self, initializer: BasicCounterReducer.init)
+        
+        // Github Search
+        container.autoregister(GithubStoreProtocol.self, initializer: GithubStore.init)
+        container.autoregister(GithubSearchViewController.self, initializer: GithubSearchViewController.init)
+        container.autoregister(GithubSearchReducerProtocol.self, initializer: GithubSearchReducer.init)
+        
         return container
     }()
 
@@ -29,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        showBasicCounter()
+        //showBasicCounter()
+        showGithubSearch()
         
         window.makeKeyAndVisible()
         return true
@@ -37,6 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func showBasicCounter() {
         let vc = resolver.resolve(BasicCounterViewController.self)
+        window?.rootViewController = vc
+    }
+    
+    private func showGithubSearch() {
+        let vc = resolver.resolve(GithubSearchViewController.self)
         window?.rootViewController = vc
     }
 }
