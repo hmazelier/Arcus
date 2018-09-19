@@ -14,7 +14,7 @@ import Swinject
 
 @testable import ArcusExample
 
-private final class FakeGHStore: GithubStoreProtocol {
+final class FakeGHStore: GithubStoreProtocol {
     var users: [GithubStore.User] = [GithubStore.User(id: 0, login: "hmazelier", url: URL(string: "https://google.com")!)]
     func searchUsers(_ query: String?) -> Observable<[GithubStore.User]> {
         return Observable.just(self.users)

@@ -12,6 +12,7 @@
 		5276563A21525F5B00A955A6 /* IkeaTranslatorReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276563921525F5B00A955A6 /* IkeaTranslatorReducer.swift */; };
 		5276563C2152627700A955A6 /* CompoundReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276563B2152627700A955A6 /* CompoundReducer.swift */; };
 		5276563E2152665900A955A6 /* CompoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276563D2152665900A955A6 /* CompoundViewController.swift */; };
+		527BACC32152EF0F00FE0663 /* CompoundReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BACC22152EF0F00FE0663 /* CompoundReducerTests.swift */; };
 		5292600A2151978500384109 /* Arcus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529260092151978500384109 /* Arcus.framework */; };
 		5292600B2151978500384109 /* Arcus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529260092151978500384109 /* Arcus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52926017215197D100384109 /* BasicCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292600F215197D100384109 /* BasicCounter.swift */; };
@@ -62,6 +63,7 @@
 		5276563921525F5B00A955A6 /* IkeaTranslatorReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkeaTranslatorReducer.swift; sourceTree = "<group>"; };
 		5276563B2152627700A955A6 /* CompoundReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundReducer.swift; sourceTree = "<group>"; };
 		5276563D2152665900A955A6 /* CompoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundViewController.swift; sourceTree = "<group>"; };
+		527BACC22152EF0F00FE0663 /* CompoundReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundReducerTests.swift; sourceTree = "<group>"; };
 		529260092151978500384109 /* Arcus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Arcus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5292600F215197D100384109 /* BasicCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCounter.swift; sourceTree = "<group>"; };
 		52926010215197D100384109 /* BasicCounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCounterViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				52FF38EA215196B100A9026B /* Info.plist */,
 				5292601E2151985500384109 /* BasicCounterReducerTests.swift */,
 				527656322151A19700A955A6 /* GithubSearchReducerTests.swift */,
+				527BACC22152EF0F00FE0663 /* CompoundReducerTests.swift */,
 			);
 			path = ArcusExampleTests;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5292601F2151985500384109 /* BasicCounterReducerTests.swift in Sources */,
+				527BACC32152EF0F00FE0663 /* CompoundReducerTests.swift in Sources */,
 				527656332151A19700A955A6 /* GithubSearchReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
