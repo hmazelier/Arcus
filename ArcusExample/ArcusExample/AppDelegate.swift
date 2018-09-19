@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.autoregister(GithubSearchViewController.self, initializer: GithubSearchViewController.init)
         container.autoregister(GithubSearchReducerProtocol.self, initializer: GithubSearchReducer.init)
         
+        container.autoregister(CompoundReducerProtocol.self, initializer: CompoundReducer.init)
+        container.autoregister(IkeaTranslatorReducerProtocol.self, initializer: IkeaTranslatorReducer.init)
+        container.autoregister(CompoundViewController.self, initializer: CompoundViewController.init)
+
         return container
     }()
 
@@ -38,7 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         //showBasicCounter()
-        showGithubSearch()
+        //showGithubSearch()
+        showCompound()
         
         window.makeKeyAndVisible()
         return true
@@ -51,6 +56,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func showGithubSearch() {
         let vc = resolver.resolve(GithubSearchViewController.self)
+        window?.rootViewController = vc
+    }
+    
+    private func showCompound() {
+        let vc = resolver.resolve(CompoundViewController.self)
         window?.rootViewController = vc
     }
 }
