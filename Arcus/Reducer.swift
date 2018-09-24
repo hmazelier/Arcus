@@ -32,4 +32,6 @@ public protocol Reducer: HasDisposeBag {
     
     func produceEvent(from action: ActionType) -> Observable<Event> //Can produce MutationType, ProcessingEvent and Step
     func reduce(state: StateType, mutation: MutationType) -> StateType
+    
+    func onReady()
 }

@@ -16,7 +16,7 @@ private var actionsKey = "action"
 extension Reducer {
     
     public var actions: PublishRelay<Action> {
-        return self.associatedObject(forKey: &actionsKey, default: provideInitialActionsRelay())
+        return self.associatedObject(forKey: &actionsKey, default: .init())
     }
     
     public var state: BehaviorSubject<StateType> {
@@ -43,9 +43,7 @@ extension Reducer {
         return state
     }
     
-    public func start() {
-        _ = self.actions
-    }
+    public func onReady() {}
 }
 extension Reducer {
     func extractStepsFromEvents(_ events: Observable<Event>) {
@@ -108,9 +106,9 @@ extension Reducer {
         return connectableTranformedMutatedState
     }
     
-    func provideInitialActionsRelay() -> PublishRelay<Action> {
-        let actionsRelay = PublishRelay<Action>()
-        let connectableActions = actionsRelay.asObservable().publish()
+    
+    public func start() {
+        let connectableActions = self.actions.asObservable().publish()
         let transformedConnectableEvents = self.getTransformedEvents(from: connectableActions)
         
         self.extractStepsFromEvents(transformedConnectableEvents)
@@ -118,14 +116,16 @@ extension Reducer {
         
         let connectableTranformedMutatedState = self.getMutatedTransformedState(from: transformedConnectableEvents)
         
+        
         connectableTranformedMutatedState
             .bind(to: self.state)
             .disposed(by: self.disposeBag)
+        
         
         connectableTranformedMutatedState.connect().disposed(by: disposeBag)
         transformedConnectableEvents.connect().disposed(by: disposeBag)
         connectableActions.connect().disposed(by: disposeBag)
         
-        return actionsRelay
+        self.onReady()
     }
 }

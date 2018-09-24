@@ -16,6 +16,7 @@ protocol CompoundReducerProtocol {
     var state: BehaviorSubject<Compound.State> { get }
     var actions: PublishRelay<Action> { get }
     var processingEvents: PublishRelay<ProcessingEvent> { get }
+    func start()
 }
 
 final class CompoundReducer: Reducer, ProcessingEventEmitter, CompoundReducerProtocol {

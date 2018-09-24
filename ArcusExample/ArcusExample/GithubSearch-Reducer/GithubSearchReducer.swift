@@ -16,6 +16,7 @@ protocol GithubSearchReducerProtocol {
     var state: BehaviorSubject<GithubSearch.State> { get }
     var actions: PublishRelay<Action> { get }
     var processingEvents: PublishRelay<ProcessingEvent> { get }
+    func start()
 }
 
 final class GithubSearchReducer: Reducer, GithubSearchReducerProtocol, ProcessingEventEmitter {

@@ -42,7 +42,6 @@ class CompoundViewController: UIViewController {
         connectActions()
         watchState()
         watchProcessingEvents()
-        
         rx
             .methodInvoked(#selector(viewDidAppear(_:)))
             .take(1)
@@ -50,6 +49,7 @@ class CompoundViewController: UIViewController {
                 self?.textField.becomeFirstResponder()
             })
             .disposed(by: disposeBag)
+        output.start()
     }
     
     override func viewDidAppear(_ animated: Bool) {

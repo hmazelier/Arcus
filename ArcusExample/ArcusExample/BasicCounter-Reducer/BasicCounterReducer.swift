@@ -14,6 +14,7 @@ import RxCocoa
 protocol BasicCounterReducerProtocol {
     var state: BehaviorSubject<BasicCounter.State> { get }
     var actions: PublishRelay<Action> { get }
+    func start()
 }
 
 final class BasicCounterReducer: Reducer, BasicCounterReducerProtocol {

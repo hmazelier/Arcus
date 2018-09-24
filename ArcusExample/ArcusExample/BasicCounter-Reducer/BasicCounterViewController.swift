@@ -37,6 +37,7 @@ class BasicCounterViewController: UIViewController {
         configureViews()
         connectActions()
         watchState()
+        output.start()
     }
     
     

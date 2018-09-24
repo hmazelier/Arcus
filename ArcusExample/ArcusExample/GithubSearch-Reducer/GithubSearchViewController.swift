@@ -41,6 +41,7 @@ class GithubSearchViewController: UIViewController {
         connectActions()
         watchState()
         watchProcessingEvents()
+        output.start()
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -30,10 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.autoregister(GithubSearchViewController.self, initializer: GithubSearchViewController.init)
         container.autoregister(GithubSearchReducerProtocol.self, initializer: GithubSearchReducer.init)
         
+        // Compound
         container.autoregister(CompoundReducerProtocol.self, initializer: CompoundReducer.init)
         container.autoregister(IkeaTranslatorReducerProtocol.self, initializer: IkeaTranslatorReducer.init)
         container.autoregister(CompoundViewController.self, initializer: CompoundViewController.init)
 
+        //Date Presentation
+        container.autoregister(DatePresentationReducerProtocol.self, initializer: DatePresentationReducer.init)
+        container.autoregister(DatePresentationPresenterProtocol.self, initializer: DatePresentationPresenter.init)
+        container.autoregister(DatePresentationViewController.self, initializer: DatePresentationViewController.init)
+        
         return container
     }()
 
@@ -43,7 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //showBasicCounter()
         //showGithubSearch()
-        showCompound()
+        //showCompound()
+        showDatePresentation()
         
         window.makeKeyAndVisible()
         return true
@@ -61,6 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func showCompound() {
         let vc = resolver.resolve(CompoundViewController.self)
+        window?.rootViewController = vc
+    }
+    
+    private func showDatePresentation() {
+        let vc = resolver.resolve(DatePresentationViewController.self)
         window?.rootViewController = vc
     }
 }
