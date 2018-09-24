@@ -31,3 +31,10 @@ public protocol Mutation: Event { }
 public protocol ProcessingEvent: Event { }
 
 public protocol Step: Event {}
+
+public enum Steps {
+    public final class Close: Step {
+        fileprivate init() {}
+    }
+    @nonobjc public static let close: Step = Close()
+}
