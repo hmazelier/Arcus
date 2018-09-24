@@ -15,8 +15,6 @@
 		521FD1962149B967008D1A87 /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1892149B967008D1A87 /* Observable+.swift */; };
 		521FD1972149B967008D1A87 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18B2149B967008D1A87 /* Reducer.swift */; };
 		521FD1992149B967008D1A87 /* ProcessingEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */; };
-		521FD19A2149B967008D1A87 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18E2149B967008D1A87 /* Presenter.swift */; };
-		521FD19B2149B967008D1A87 /* ViewModeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD18F2149B967008D1A87 /* ViewModeler.swift */; };
 		521FD19C2149B967008D1A87 /* Reducer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1902149B967008D1A87 /* Reducer+.swift */; };
 		521FD19D2149B967008D1A87 /* StepProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1912149B967008D1A87 /* StepProducer.swift */; };
 		521FD19E2149B967008D1A87 /* HasDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1922149B967008D1A87 /* HasDisposeBag.swift */; };
@@ -24,7 +22,6 @@
 		521FD1A62149B978008D1A87 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD1A22149B978008D1A87 /* CoordinatorTests.swift */; };
 		52FF3885214C2E3400A9026B /* Reducer+StepProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */; };
 		52FF3887214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */; };
-		52FF3889214C3FC000A9026B /* ViewModelerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF3888214C3FC000A9026B /* ViewModelerTests.swift */; };
 		545C10B44181756CDCF0E29A /* Pods_Arcus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2503B81DCA8F8C37EA25FC74 /* Pods_Arcus.framework */; };
 		8AC4B157EE42A3E065616628 /* Pods_Arcus_ArcusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08AF19695E5CA22855BD1A8 /* Pods_Arcus_ArcusTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,8 +51,6 @@
 		521FD1892149B967008D1A87 /* Observable+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
 		521FD18B2149B967008D1A87 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingEventEmitter.swift; sourceTree = "<group>"; };
-		521FD18E2149B967008D1A87 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		521FD18F2149B967008D1A87 /* ViewModeler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModeler.swift; sourceTree = "<group>"; };
 		521FD1902149B967008D1A87 /* Reducer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reducer+.swift"; sourceTree = "<group>"; };
 		521FD1912149B967008D1A87 /* StepProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepProducer.swift; sourceTree = "<group>"; };
 		521FD1922149B967008D1A87 /* HasDisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasDisposeBag.swift; sourceTree = "<group>"; };
@@ -63,7 +58,6 @@
 		521FD1A22149B978008D1A87 /* CoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+StepProducerTests.swift"; sourceTree = "<group>"; };
 		52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+ProcessingEventEmitterTests.swift"; sourceTree = "<group>"; };
-		52FF3888214C3FC000A9026B /* ViewModelerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelerTests.swift; sourceTree = "<group>"; };
 		6BD6D368BFA8B64E9738AFB6 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77443E4E8EA4A8FA6BB077D9 /* Pods-Arcus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arcus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arcus/Pods-Arcus.release.xcconfig"; sourceTree = "<group>"; };
 		D08AF19695E5CA22855BD1A8 /* Pods_Arcus_ArcusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arcus_ArcusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +119,7 @@
 				521FD18D2149B967008D1A87 /* ProcessingEventEmitter.swift */,
 				521FD18B2149B967008D1A87 /* Reducer.swift */,
 				521FD1902149B967008D1A87 /* Reducer+.swift */,
-				521FD18A2149B967008D1A87 /* Scene */,
+				521FD1912149B967008D1A87 /* StepProducer.swift */,
 			);
 			path = Arcus;
 			sourceTree = "<group>";
@@ -138,19 +132,8 @@
 				521FD1A22149B978008D1A87 /* CoordinatorTests.swift */,
 				52FF3884214C2E3400A9026B /* Reducer+StepProducerTests.swift */,
 				52FF3886214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift */,
-				52FF3888214C3FC000A9026B /* ViewModelerTests.swift */,
 			);
 			path = ArcusTests;
-			sourceTree = "<group>";
-		};
-		521FD18A2149B967008D1A87 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				521FD18E2149B967008D1A87 /* Presenter.swift */,
-				521FD18F2149B967008D1A87 /* ViewModeler.swift */,
-				521FD1912149B967008D1A87 /* StepProducer.swift */,
-			);
-			path = Scene;
 			sourceTree = "<group>";
 		};
 		7F71241915B26FFBFFD299DC /* Frameworks */ = {
@@ -347,11 +330,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				521FD19B2149B967008D1A87 /* ViewModeler.swift in Sources */,
 				521FD1962149B967008D1A87 /* Observable+.swift in Sources */,
 				521FD1952149B967008D1A87 /* Events.swift in Sources */,
 				521FD19E2149B967008D1A87 /* HasDisposeBag.swift in Sources */,
-				521FD19A2149B967008D1A87 /* Presenter.swift in Sources */,
 				521FD1992149B967008D1A87 /* ProcessingEventEmitter.swift in Sources */,
 				521FD1942149B967008D1A87 /* Coordinator.swift in Sources */,
 				521FD19C2149B967008D1A87 /* Reducer+.swift in Sources */,
@@ -366,7 +347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52FF3887214C3CEE00A9026B /* Reducer+ProcessingEventEmitterTests.swift in Sources */,
-				52FF3889214C3FC000A9026B /* ViewModelerTests.swift in Sources */,
 				521FD1A42149B978008D1A87 /* ReducerTests.swift in Sources */,
 				521FD1A62149B978008D1A87 /* CoordinatorTests.swift in Sources */,
 				52FF3885214C2E3400A9026B /* Reducer+StepProducerTests.swift in Sources */,

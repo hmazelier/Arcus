@@ -31,6 +31,11 @@ final class CompoundReducer: Reducer, ProcessingEventEmitter, CompoundReducerPro
         self.resolver = resolver
     }
     
+    func onReady() {
+        ghSearchReducer.start()
+        ikeaTranslatorReducer.start()
+    }
+    
     func provideInitialState() -> Compound.State {
         return Compound.State()
     }

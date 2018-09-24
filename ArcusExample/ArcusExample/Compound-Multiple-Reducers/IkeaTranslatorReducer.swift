@@ -29,6 +29,7 @@ public enum IkeaTranslator {
 protocol IkeaTranslatorReducerProtocol {
     var state: BehaviorSubject<IkeaTranslator.State> { get }
     var actions: PublishRelay<Action> { get }
+    func start()
 }
 
 final class IkeaTranslatorReducer: Reducer, IkeaTranslatorReducerProtocol {

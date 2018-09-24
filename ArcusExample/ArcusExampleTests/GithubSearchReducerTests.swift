@@ -43,6 +43,7 @@ class GithubSearchReducerTests: XCTestCase {
             exp.fulfill()
         }).disposed(by: disposeBag)
         
+        sut.start()
         sut.actions.accept(GithubSearch.Actions.changeQuery("FACK AFF"))
         
         wait(for: [exp], timeout: 1)

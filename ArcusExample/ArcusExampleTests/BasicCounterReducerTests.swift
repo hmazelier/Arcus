@@ -29,6 +29,8 @@ class BasicCounterReducerTests: XCTestCase {
             exp.fulfill()
         }).disposed(by: disposeBag)
         
+        sut.start()
+        
         sut.actions.accept(BasicCounter.Actions.increment)
         sut.actions.accept(BasicCounter.Actions.increment)
         wait(for: [exp], timeout: 1)
@@ -40,6 +42,8 @@ class BasicCounterReducerTests: XCTestCase {
             XCTAssertTrue(state.count == -2)
             exp.fulfill()
         }).disposed(by: disposeBag)
+        
+        sut.start()
         
         sut.actions.accept(BasicCounter.Actions.decrement)
         sut.actions.accept(BasicCounter.Actions.decrement)

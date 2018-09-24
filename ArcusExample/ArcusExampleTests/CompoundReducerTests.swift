@@ -38,6 +38,8 @@ class CompoundReducerTests: XCTestCase {
             exp.fulfill()
         }).disposed(by: disposeBag)
         
+        sut.start()
+        
         sut.actions.accept(Compound.Actions.changeQuery("io"))
         
         wait(for: [exp], timeout: 1)
